@@ -14,6 +14,12 @@ function eap_assets() {
 
 add_action('wp_enqueue_scripts', 'eap_assets');
 
+function eap_admin_assets() {
+	
+}
+
+add_action("admin_enqueue_scripts", "eap_admin_assets");
+
 function eap_init() {
 	register_setting('eap-options', 'eap-amazon-country', array(
 		'type' => 'string', 
@@ -48,6 +54,7 @@ function eap_options_panel(){
 add_action('admin_menu', 'eap_options_panel');
 
 function eap_options_settings(){
+	wp_enqueue_script("eap-admin", plugin_dir_url(__FILE__) . "assets/admin-main.js", array(), "1.0.0", true);
 	?>
 	<div class="wrap">
 		<h1>Easy Amazon Products</h1>
@@ -100,6 +107,23 @@ function eap_options_settings(){
 		</form>
 		<hr />
 		<h2>How to use</h2>
+		<h3>Shortcode</h3>
+		<p>
+			[eap]<br />
+			<br />
+			<strong>Shortcode Attributes</strong><br />
+			<strong>asin</strong>: ASIN is Amazon unique identifier for products. You can insert multiple ASINs separating them by comma (ASIN1,ASIN2)<br />
+			<strong>width</strong>: Box's Width, valid only for multiple ASINs.<br />
+			<br />
+		</p>
+		<h2>Examples</h2>
+		<p>
+			[eap asin="B07PB8TYCJ"]<br />
+			<img src="<?php print plugin_dir_url(__FILE__) . "assets/example01.png"; ?>" />
+			<hr />
+			[eap asin="B07PB8TYCJ,B07TGT88Z9,B07MQDZ8B8"]<br />
+			<img src="<?php print plugin_dir_url(__FILE__) . "assets/example02.png"; ?>" />
+		</p>
 	</div>
 	<?php
 }
