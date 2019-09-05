@@ -165,6 +165,8 @@ function eap_shortcode($atts) {
 	foreach($products as $product) {
 		$asin = $product;
 		$product = eap_api_make_product_request($product);
+		if(!$product)
+			break;
 
 		if(!$single)
 			$product['item_title'] = substr($product['item_title'], 0, 20) . '...';
@@ -187,6 +189,8 @@ function eap_shortcode($atts) {
 		$output .= $currentTemplate;
 	}
 	$output .= "</div>";
+
+	sleep(1);
 
 	return $output;
 }
@@ -245,6 +249,8 @@ function eap_api_make_product_request($asin) {
 	$request = 'https://' . $host . $uri . '?' . $canonicalizedQuery . '&Signature=' . $signature;
 
 	$result = eap_curl_get_content($request);
+	if(!$result)
+		return false;
 
 	$result = simplexml_load_string($result, 'SimpleXMLElement', LIBXML_NOCDATA);
 	$result = json_decode(json_encode((array)$result), true);
@@ -276,6 +282,9 @@ function eap_curl_get_content($url){
 	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 	$html = curl_exec($curl);
 	curl_close($curl);
+
+	if(empty($html))
+		return false;
 	
 	return $html;
 }
