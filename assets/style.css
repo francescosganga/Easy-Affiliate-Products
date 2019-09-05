@@ -1,0 +1,120 @@
+.eap-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 90%;
+}
+
+.eap-product-multi {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.eap-product-multi .eap-product-inner {
+	border: 1px solid #000;
+	margin: 10px;
+	padding: 10px;
+}
+
+.eap-product-multi .eap-product-title {
+	font-weight: bold;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+.eap-product-multi .eap-product-image {
+	margin: 0;
+	padding: 0;
+
+	text-align: center;
+}
+
+.eap-product-multi .eap-product-image > img {
+	width: 100%;
+}
+
+.eap-product-multi .eap-product-price {
+	margin-top: 10px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.eap-product-multi .eap-product-price .oldprice {
+	font-size: normal;
+	text-decoration: line-through;
+	font-size: 13px;
+	margin-right: 5px;
+}
+
+.eap-product-multi .eap-product-buy-button input[type='submit'] {
+	font-size: 0.8em;
+}
+
+.eap-product-single {
+}
+
+.eap-product-single .eap-product-inner {
+	border: 1px solid #000;
+	margin: 10px;
+	padding: 10px;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.eap-product-single .eap-product-image {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	width: 30%;
+}
+
+.eap-product-single .eap-product-image > img {
+	width: 100%;
+}
+
+.eap-product-single .eap-product-description {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	width: 60%;
+
+	margin-left: 10px;
+}
+
+.eap-product-single .eap-product-price {
+	margin-top: 15px;
+	font-weight: bold;
+}
+
+.eap-product-single .eap-product-price .oldprice {
+	font-size: normal;
+	text-decoration: line-through;
+	font-size: 13px;
+	margin-right: 5px;
+}
+
+.eap-product-single .eap-product-buy-button {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+@media screen and (max-width: 600px) {
+	.eap-row {
+		display: block;
+	}
+
+	.eap-product-multi {
+		width: 100%!important;
+		margin-bottom: 15px;
+	}
+
+	.eap-product-buy-button input[type='submit'] {
+		font-size: 1em;
+	}
+}
