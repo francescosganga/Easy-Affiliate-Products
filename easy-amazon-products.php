@@ -190,7 +190,7 @@ function eap_shortcode($atts) {
 	}
 	$output .= "</div>";
 
-	sleep(1);
+	sleep(0.5);
 
 	return $output;
 }
