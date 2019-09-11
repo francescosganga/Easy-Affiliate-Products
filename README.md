@@ -1,4 +1,4 @@
-# Easy Amazon Products
+# Easy Affiliate Products
 Wordpress Plugin for Amazon Affiliates
 
 ## Getting Started
@@ -12,15 +12,23 @@ You need to have:
 
 ### Installing
 
-Under Construction
+1. Upload folder inside zip 'easy-affiliate-products.zip' to the '/wp-content/plugins/' directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Go to Easy Affiliates Products, set Operating Country, your Amazon Tag, your Amazon API and  the API Key and save changes.
 
-## Running the tests
+## Usage
 
-Under Construction
+**Search for ASIN of the Amazon Product**
+https://www.amazon.it/Xiaomi-Redmi-Note-Blue-64gb/dp/B07PB8TYCJ/
+The ASIN for the product above is "B07PB8TYCJ" (without quotes, obv).
 
-## Built With
+You can embed the Amazon Product using EAP shortcode, like this:
+[eap asin="B07PB8TYCJ"]
 
-Under Construction
+You can also add multiple asin's and set width (%) for each box like this:
+[eap asin="B07PB8TYCJ,asin2,asin3" width="33"]
+
+Enjoy your new Wordpress Plugin.
 
 ## Authors
 

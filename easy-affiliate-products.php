@@ -1,6 +1,6 @@
 <?php
 /**
-* Plugin Name: Easy Amazon Products
+* Plugin Name: Easy Affiliate Products
 * Plugin URI: http://www.francescosganga.it/wordpress/plugins/easy-amazon-products/
 * Description: Insert Amazon Products in your blog
 * Version: 1.0.0
@@ -48,7 +48,7 @@ function eap_init() {
 add_action('admin_init', 'eap_init');
 
 function eap_options_panel(){
-	add_menu_page('Easy Amazon Products', 'Easy Amazon Products', 'manage_options', 'eap-options', 'eap_options_settings');
+	add_menu_page('Easy Affiliate Products', 'Easy Affiliate Products', 'manage_options', 'eap-options', 'eap_options_settings');
 	add_submenu_page('eap-options', 'About', 'About', 'manage_options', 'eap-option-about', 'eap_options_about');
 }
 add_action('admin_menu', 'eap_options_panel');
@@ -57,7 +57,7 @@ function eap_options_settings(){
 	wp_enqueue_script("eap-admin", plugin_dir_url(__FILE__) . "assets/admin-main.js", array(), "1.0.0", true);
 	?>
 	<div class="wrap">
-		<h1>Easy Amazon Products</h1>
+		<h1>Easy Affiliate Products</h1>
 		<h2>Settings Section</h2>
 		<form method="post" action="options.php">
 		<?php settings_fields('eap-options'); ?>
