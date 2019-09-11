@@ -3,7 +3,7 @@
 * Plugin Name: Easy Affiliate Products
 * Plugin URI: http://www.francescosganga.it/wordpress/plugins/easy-amazon-products/
 * Description: Insert Amazon Products in your blog
-* Version: 1.0.0
+* Version: 1.0.1
 * Author: Francesco Sganga
 * Author URI: http://www.francescosganga.it/
 **/
