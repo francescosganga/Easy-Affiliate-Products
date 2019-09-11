@@ -44,6 +44,12 @@ function eap_init() {
 		'sanitize_callback' => 'sanitize_text_field',
 		'default' => ""
 	));
+
+	register_setting('eap-options', 'eap-buy-now-button', array(
+		'type' => 'string', 
+		'sanitize_callback' => 'sanitize_text_field',
+		'default' => "Buy now"
+	));
 }
 add_action('admin_init', 'eap_init');
 
@@ -100,6 +106,12 @@ function eap_options_settings(){
 				<th scope="row">Amazon API Key</th>
 				<td>
 					<input type="text" name="eap-amazon-api-secret" value="<?php echo get_option('eap-amazon-api-secret'); ?>" />
+				</td>
+			</tr>
+			<tr valign="top">
+				<th scope="row">Buy Now button string</th>
+				<td>
+					<input type="text" name="eap-buy-now-button" value="<?php echo get_option('eap-buy-now-button'); ?>" />
 				</td>
 			</tr>
 		</table>
