@@ -197,6 +197,7 @@ function eap_shortcode($atts) {
 		$currentTemplate = str_replace("{amazon_country}", get_option("eap-amazon-country"), $currentTemplate);
 		$currentTemplate = str_replace("{amazon_tag}", get_option("eap-amazon-tag"), $currentTemplate);
 		$currentTemplate = str_replace("{amazon_api_access_key}", get_option("eap-amazon-api-access-key"), $currentTemplate);
+		$currentTemplate = str_replace("{buy_now_button}", get_option("eap-buy-now-button"), $currentTemplate);
 
 		$output .= $currentTemplate;
 	}
