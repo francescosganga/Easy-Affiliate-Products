@@ -48,7 +48,7 @@ function eap_init() {
 	register_setting('eap-options', 'eap-buy-now-button', array(
 		'type' => 'string', 
 		'sanitize_callback' => 'sanitize_text_field',
-		'default' => "Buy now"
+		'default' => "Buy Now"
 	));
 }
 add_action('admin_init', 'eap_init');
