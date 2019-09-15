@@ -15,7 +15,7 @@
 				<input type="hidden" name="SubscriptionId" value="{amazon_api_access_key}" />
 				<input type="hidden" name="ASIN.1" value="{item_asin}" /><br />
 				<input type="hidden" name="Quantity.1" value="1" /><br/>
-				<input type="submit" name="add" class="eap-product-btn" value="{buy_now_button}" />
+				<input type="submit" name="add" class="eap-product-btn" value="Acquista su Amazon.it" />
 			</form>
 		</div>
 	</div>

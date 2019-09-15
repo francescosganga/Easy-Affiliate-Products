@@ -287,14 +287,17 @@ function eap_api_generate_signature($stringToSign) {
 }
 
 function eap_curl_get_content($url){
-	$curl = curl_init($url);
+	/*$curl = curl_init($url);
 	curl_setopt($curl, CURLOPT_FAILONERROR, true);
 	curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
 	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 	$html = curl_exec($curl);
-	curl_close($curl);
+	curl_close($curl);*/
+
+	$response = wp_remote_get($url);
+	$html = wp_remote_retrieve_body($response);
 
 	if(empty($html))
 		return false;
@@ -303,6 +306,8 @@ function eap_curl_get_content($url){
 }
 
 function eap_imageurl_to_base64($url) {
-	$image = file_get_contents($url);
+	//$image = file_get_contents($url);
+	$response = wp_remote_get($url);
+	$image = wp_remote_retrieve_body($response);
 	return "data:image/jpg;base64," . base64_encode($image);
 }
